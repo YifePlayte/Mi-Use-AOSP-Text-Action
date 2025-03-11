@@ -6,7 +6,7 @@
 #include "zygisk.hpp"
 #include "module.h"
 
-namespace mi_use_aosp_share_sheet {
+namespace mi_use_aosp_text_action {
     ssize_t xread(int fd, void *buffer, size_t count) {
         ssize_t total = 0;
         char *buf = (char *) buffer;
@@ -178,6 +178,6 @@ namespace mi_use_aosp_share_sheet {
 }
 
 // Register our module class and the companion handler function
-REGISTER_ZYGISK_MODULE(mi_use_aosp_share_sheet::Module)
+REGISTER_ZYGISK_MODULE(mi_use_aosp_text_action::Module)
 
-REGISTER_ZYGISK_COMPANION(mi_use_aosp_share_sheet::companion)
+REGISTER_ZYGISK_COMPANION(mi_use_aosp_text_action::companion)

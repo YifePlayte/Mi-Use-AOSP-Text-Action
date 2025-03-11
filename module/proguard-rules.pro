@@ -20,7 +20,7 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep class com.yifeplayte.miuseaospsharesheet.module.Main {
+-keep class com.yifeplayte.miuseaosptextaction.module.Main {
     public static void main(...);
 }
 

@@ -1,11 +1,11 @@
 #include <android/log.h>
 #pragma once
 
-namespace mi_use_aosp_share_sheet {
+namespace mi_use_aosp_text_action {
 
     static constexpr auto TAG = "MiUseAOSPShareSheet/JNI";
-    static constexpr auto MODULE_DEX_PATH = "/data/adb/modules/mi_use_aosp_share_sheet/classes.dex";
-    static constexpr auto ENTRY_CLASS_NAME = "com.yifeplayte.miuseaospsharesheet.module.Main";
+    static constexpr auto MODULE_DEX_PATH = "/data/adb/modules/mi_use_aosp_text_action/classes.dex";
+    static constexpr auto ENTRY_CLASS_NAME = "com.yifeplayte.miuseaosptextaction.module.Main";
 
 #define LOGD(...)     __android_log_print(ANDROID_LOG_DEBUG, TAG, __VA_ARGS__)
 #define LOGI(...)     __android_log_print(ANDROID_LOG_INFO,  TAG, __VA_ARGS__)

@@ -4,14 +4,14 @@ plugins {
 }
 
 object Props {
-    const val versionCode = 6
-    const val versionName = "v1.0.5"
+    const val versionCode = 1
+    const val versionName = "v1.0.0"
 }
 
 android {
-    compileSdk = 34
+    compileSdk = 35
 
-    namespace = "com.yifeplayte.miuseaospsharesheet"
+    namespace = "com.yifeplayte.miuseaosptextaction"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -29,9 +29,9 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.yifeplayte.miuseaospsharesheet"
-        minSdk = 33
-        targetSdk = 34
+        applicationId = "com.yifeplayte.miuseaosptextaction"
+        minSdk = 35
+        targetSdk = 35
         versionCode = Props.versionCode
         versionName = Props.versionName
     }
@@ -78,7 +78,7 @@ tasks.register<Zip>("assembleModule") {
         }
     }
     destinationDirectory.set(layout.buildDirectory.asFile.get().resolve("outputs/module"))
-    archiveFileName.set("mi-use-aosp-share-sheet.zip")
+    archiveFileName.set("mi-use-aosp-text-action.zip")
 }
 
 afterEvaluate {

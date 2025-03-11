@@ -14,4 +14,4 @@ dependencyResolutionManagement {
 }
 include(":module")
 include(":hiddenapi")
-rootProject.name = "MiUseAOSPShareSheet"
+rootProject.name = "MiUseAOSPTextAction"

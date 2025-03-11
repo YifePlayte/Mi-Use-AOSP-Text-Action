@@ -1,4 +1,4 @@
-package com.yifeplayte.miuseaospsharesheet.module
+package com.yifeplayte.miuseaosptextaction.module
 
 import android.annotation.SuppressLint
 import android.util.ArrayMap
@@ -8,7 +8,7 @@ import com.miui.base.MiuiStubRegistry
 @Suppress("unused")
 @SuppressLint("PrivateApi")
 object Main {
-    const val TAG = "MiUseAOSPShareSheet"
+    const val TAG = "MiUseAOSPTextAction"
 
     @JvmStatic
     fun main() {
@@ -26,8 +26,8 @@ object Main {
                     ).apply { isAccessible = true }
             val sManifestStubs = sManifestStubsField.get(null)
             val newProviders = ArrayMap<String, MiuiStubRegistry.ImplProvider<*>>()
-            newProviders["com.android.internal.app.ResolverActivityStub"] =
-                ResolverActivityStubImplProxy.Provider()
+            newProviders["com.android.internal.policy.DecorViewStub"] =
+                DecorViewStubImplProxy.Provider()
             val updatedManifest = updateManifestMethod.invoke(null, sManifestStubs, newProviders)
             sManifestStubsField.set(null, updatedManifest)
             // Log.i(TAG, "Replace ResolverActivityStub provider success")

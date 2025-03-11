@@ -4,5 +4,5 @@ plugins {
 
 android {
     namespace = "com.yifeplayte.hiddenapi"
-    compileSdk = 34
+    compileSdk = 35
 }
