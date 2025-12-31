@@ -1,28 +1,15 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+-keep class com.yifeplayte.miuseaosptextaction.module.** { *; }
+-dontoptimize
+-dontobfuscate
+-repackageclasses com.yifeplayte.miuseaosptextaction
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
-
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
-
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
-
--keep class com.yifeplayte.miuseaosptextaction.module.Main {
-    public static void main(...);
+# For AndroidHiddenApiBypass.
+-dontwarn dalvik.system.VMRuntime
+-assumenosideeffects class android.util.Property{
+    public static *** of(...);
 }
+-if class org.lsposed.hiddenapibypass.HiddenApiBypass
+-keepclassmembers class org.lsposed.hiddenapibypass.Helper$* { *; }
 
 # This is generated automatically by the Android Gradle plugin.
 -dontwarn androidx.annotation.NonNull

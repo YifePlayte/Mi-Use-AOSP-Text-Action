@@ -41,17 +41,25 @@ android {
             isShrinkResources = true
             isMinifyEnabled = true
             proguardFiles("proguard-rules.pro")
+            optimization {
+                keepRules {
+                    ignoreFrom("org.lsposed.hiddenapibypass:hiddenapibypass")
+                }
+            }
         }
     }
 }
 
 dependencies {
     compileOnly(project(":hiddenapi"))
-    implementation("org.lsposed.hiddenapibypass:hiddenapibypass:4.3")
+    implementation("org.lsposed.hiddenapibypass:hiddenapibypass:6.1")
 }
 
 tasks.register<Zip>("assembleModule") {
-    val zipTree = zipTree(layout.buildDirectory.asFile.get().resolve("outputs/apk/release/module-release-unsigned.apk"))
+    val zipTree = zipTree(
+        layout.buildDirectory.asFile.get()
+            .resolve("outputs/apk/release/module-release-unsigned.apk")
+    )
     from(zipTree) {
         include("assets/**", "lib/**", "classes.dex")
         exclude("assets/module.prop")

@@ -24,7 +24,7 @@ public class DecorViewStubImplProxy extends DecorViewStubImpl {
 
         @Override
         public DecorViewStubImpl provideSingleton() {
-            HiddenApiBypass.addHiddenApiExemptions("Lcom/android/internal/policy/DecorViewStubImpl;");
+            HiddenApiBypass.addHiddenApiExemptions("");
             return Singleton.singleton;
         }
 

@@ -3,7 +3,9 @@ package com.yifeplayte.miuseaosptextaction.module
 import android.annotation.SuppressLint
 import android.util.ArrayMap
 import android.util.Log
+import com.android.internal.policy.DecorViewStub
 import com.miui.base.MiuiStubRegistry
+import com.miui.base.MiuiStubUtil
 
 @Suppress("unused")
 @SuppressLint("PrivateApi")
@@ -16,6 +18,10 @@ object Main {
             val sManifestStubsField =
                 MiuiStubRegistry::class.java
                     .getDeclaredField("sManifestStubs")
+                    .apply { isAccessible = true }
+            val sInstanceField =
+                DecorViewStub::class.java
+                    .getDeclaredField("sInstance")
                     .apply { isAccessible = true }
             val updateManifestMethod =
                 MiuiStubRegistry::class.java
@@ -30,6 +36,7 @@ object Main {
                 DecorViewStubImplProxy.Provider()
             val updatedManifest = updateManifestMethod.invoke(null, sManifestStubs, newProviders)
             sManifestStubsField.set(null, updatedManifest)
+            sInstanceField.set(null, MiuiStubUtil.getInstance(DecorViewStub::class.java))
             // Log.i(TAG, "Replace ResolverActivityStub provider success")
         }.onFailure {
             Log.e(TAG, "Replace ResolverActivityStub provider failed: $it", it)

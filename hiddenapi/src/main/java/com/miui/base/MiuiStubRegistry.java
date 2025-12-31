@@ -7,7 +7,7 @@ import java.util.HashMap;
 public class MiuiStubRegistry {
     private static volatile HashMap<String, ImplProvider<?>> sManifestStubs = new HashMap<>();
 
-    public static <P, Q extends P> void registerSingleton(Class<P> baseClazz, Q impl) {
+    public static <P, Q extends P> void registerSingleton(Class<P> stubClazz, Q impl) {
         throw new IllegalArgumentException("Stub!");
     }
 
